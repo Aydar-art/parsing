@@ -110,7 +110,7 @@ def get_json(file_name):
 def write_new_data(data):
     new_data = pd.DataFrame(data, columns=csv_columns)
     df = pd.read_csv('data_base/new_data.csv', sep=';')
-    df = pd.concat([df, new_data], join='outer')
+    df = pd.concat([df, new_data], join='inner')
 
     df.to_csv('data_base/new_data.csv', sep=';', index=False)
     print('new_data was rewrited...')
