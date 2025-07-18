@@ -18,7 +18,7 @@ def get_html(url, params=None, bot_data=None):
 
     if int(html.status_code) != 200:
         bot.send_message(message.from_user.id, 'Ошибка при подключении ❌ |' + str(html.status_code) + '\nПовторная попытка через 10 минут')
-        time.sleep(10)
+        time.sleep(600)
         return get_html(url, bot_data=bot_data)
     
     else:
